@@ -42,17 +42,6 @@ class MkDocsSwaggerUIPlugin(BasePlugin):
                 yaml_dict = self.load_yaml(file)
 
                 markdown = render(yaml_dict)
-                # output_dir = os.path.realpath(os.path.join(
-                #     config['site_dir'],
-                #     os.path.splitext(file.src_path)[0])
-                # )
-                #
-                # os.makedirs(output_dir)
-                #
-                # output_file = os.path.realpath(os.path.join(
-                #     output_dir,
-                #     'index.html')
-                # )
 
         return markdown
 
