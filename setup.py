@@ -8,7 +8,7 @@ setup(
     long_description='read README.md',
     keywords='mkdocs swagger yaml',
     author='KYPO Team',
-    python_requires='>=2.7',
+    python_requires='>=3',
     install_requires=[
         'mkdocs>=1.0.4'
         'PyYAML>=5.1'
