@@ -19,5 +19,5 @@ plugins:
     - mkdocs-swagger-ui
 ```
 
-and store YAML files in `/docs/api/` directory. 
+and store YAML files in `/docs/reference/` directory. 
 
