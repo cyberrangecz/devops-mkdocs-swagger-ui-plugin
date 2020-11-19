@@ -2,7 +2,7 @@ from setuptools import setup, find_packages
 
 
 setup(
-    name='mkdocs-swagger-pages-plugin',
+    name='mkdocs-swagger-ui-plugin',
     version='1.0.0',
     description='A MkDocs plugin to render yaml files as swagger UI.',
     long_description='read README.md',
@@ -16,7 +16,7 @@ setup(
     packages=find_packages(),
     entry_points={
         'mkdocs.plugins': [
-            'mkdocs-swagger-ui = mkdocs_swagger_ui_plugin.plugin:MkDocsSwaggerPlugin'
+            'mkdocs-swagger-ui = mkdocs_swagger_ui_plugin.plugin:MkDocsSwaggerUIPlugin'
         ]
     }
 )

@@ -1,5 +1,5 @@
 from mkdocs.plugins import BasePlugin
-from mkdocs_swagger_pages_plugin.swagger_yaml_to_html import render
+from mkdocs_swagger_ui_plugin.swagger_yaml_to_html import render
 from pathlib import Path
 import yaml
 import os
@@ -21,7 +21,7 @@ class MkDocsSwaggerUIPlugin(BasePlugin):
 
     def on_nav(self, nav, config, files):
         for item in nav.items:
-            if item.title == 'API':
+            if item.title == 'Reference':
                 pages = []
                 for link in item.children:
 
