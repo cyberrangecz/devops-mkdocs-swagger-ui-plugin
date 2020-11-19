@@ -5,7 +5,7 @@ setup(
     name='mkdocs-swagger-pages-plugin',
     version='1.0.0',
     description='A MkDocs plugin to render yaml files as swagger UI.',
-    long_description=read('README.md'),
+    long_description='read('README.md')',
     keywords='mkdocs swagger yaml',
     author='KYPO Team',
     python_requires='>=2.7',
