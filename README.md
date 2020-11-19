@@ -4,11 +4,11 @@ Plugin allows you to render `Swagger UI console` based on the swagger specificat
 ## Install
 In plugin directory run command: 
 ```
- python setup.py install --prefix=$HOME/.local
+ python3 setup.py install --prefix=$HOME/.local
 ``` 
 to build package localy. Then in mkdocs repository run: 
 ```
-pipenv install /home/dominik/Desktop/Utilities/mkdocs-swagger-pages-plugin/
+pipenv install { path to the plugin repository }
 pipenv sync
 ```
  
