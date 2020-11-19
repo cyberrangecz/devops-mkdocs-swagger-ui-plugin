@@ -16,7 +16,7 @@ setup(
     packages=find_packages(),
     entry_points={
         'mkdocs.plugins': [
-            'mkdocs-swagger-ui = mkdocs_swagger_pages_plugin.plugin:MkDocsSwaggerPlugin'
+            'mkdocs-swagger-ui = mkdocs_swagger_ui_plugin.plugin:MkDocsSwaggerPlugin'
         ]
     }
 )
