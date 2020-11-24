@@ -14,6 +14,7 @@ setup(
         'PyYAML>=5.1'
     ],
     packages=find_packages(),
+    package_data={'': ['templates/*.j2']},
     entry_points={
         'mkdocs.plugins': [
             'mkdocs-swagger-ui = mkdocs_swagger_ui_plugin.plugin:MkDocsSwaggerUIPlugin'

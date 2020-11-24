@@ -1,11 +1,12 @@
 from mkdocs.plugins import BasePlugin
-from mkdocs_swagger_ui_plugin.swagger_yaml_to_html import render
 from pathlib import Path
 import yaml
 import os
 from mkdocs.structure.pages import Page
 from mkdocs.structure.files import File
 import mkdocs.utils
+from jinja2 import Environment, PackageLoader
+import json
 
 mkdocs.utils.markdown_extensions = [
     '.markdown',
@@ -18,6 +19,7 @@ mkdocs.utils.markdown_extensions = [
 ]
 
 class MkDocsSwaggerUIPlugin(BasePlugin):
+    TEMPLATE = Environment(loader=PackageLoader('mkdocs_swagger_ui_plugin', 'templates')).get_template('swagger_ui_template.j2')
 
     def on_nav(self, nav, config, files):
         for item in nav.items:
@@ -41,7 +43,7 @@ class MkDocsSwaggerUIPlugin(BasePlugin):
         if file.name != 'mkdocs' and (p.suffix == '.yml' or p.suffix == '.yaml'):
                 yaml_dict = self.load_yaml(file)
 
-                markdown = render(yaml_dict)
+                markdown = MkDocsSwaggerUIPlugin.TEMPLATE.render(content=json.dumps(yaml_dict))
 
         return markdown
 
@@ -49,7 +51,7 @@ class MkDocsSwaggerUIPlugin(BasePlugin):
     def load_yaml(self, file):
         with open(file.abs_src_path, 'r') as stream:
             try:
-                content1 = yaml.load(stream, Loader=yaml.SafeLoader)
-                return content1
+                content = yaml.load(stream, Loader=yaml.SafeLoader)
+                return content
             except yaml.YAMLError as exc:
                 print(exc)
