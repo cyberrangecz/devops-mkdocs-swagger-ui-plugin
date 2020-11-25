@@ -34,7 +34,7 @@ build:
     - tags
   artifacts:
     paths:
-      - mkdocs-swagger-ui-plugin/dist
+      - mkdocs_swagger_ui_plugin/dist
     expire_in: 1 day
     
 
