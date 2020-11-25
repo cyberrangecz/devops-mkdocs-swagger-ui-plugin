@@ -14,8 +14,6 @@ stages:
 build:
   stage: build
   script:
-    - ls
-    - cd mkdocs-swagger-ui-plugin
     # Remove explicit version from setup.py, its on the 6th line
     - sed '6d' setup.py -i
     # Show setup.py
