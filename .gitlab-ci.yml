@@ -14,8 +14,7 @@ stages:
 build:
   stage: build
   script:
-    - cd drf-oidc-auth
-    - rm setup.cfg
+    - cd mkdocs-swagger-ui-plugin
     # Remove explicit version from setup.py, its on the 6th line
     - sed '6d' setup.py -i
     # Show setup.py
