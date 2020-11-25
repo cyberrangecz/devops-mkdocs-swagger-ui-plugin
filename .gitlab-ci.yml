@@ -37,4 +37,14 @@ build:
       - mkdocs_swagger_ui_plugin/dist
     expire_in: 1 day
     
+deploy:
+  image: curlimages/curl:latest
+  stage: deploy
+  script:
+    - export PACKAGE=$(cat mkdocs_swagger_ui_plugin/dist/.package-name)
+    - 'curl -u $PYPI_USER:$PYPI_PASSWORD -X POST "$PYPI_UPLOAD_URL" -H  "Content-Type: multipart/form-data" -F "pypi.asset=@mkdocs_swagger_ui_plugin/dist/$PACKAGE"'
+  dependencies:
+    - build
+  only:
+    - tags
 
