@@ -10,7 +10,7 @@ setup(
     author='KYPO Team',
     python_requires='>=3',
     install_requires=[
-        'mkdocs>=1.0.4'
+        'mkdocs>=1.0.4',
         'PyYAML>=5.1'
     ],
     packages=['mkdocs_swagger_ui_plugin'],
