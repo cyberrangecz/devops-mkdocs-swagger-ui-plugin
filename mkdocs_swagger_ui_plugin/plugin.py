@@ -8,7 +8,7 @@ import mkdocs.utils
 from jinja2 import Environment, PackageLoader
 import json
 
-mkdocs.utils.markdown_extensions = [
+mkdocs.utils.markdown_extensions = (
     '.markdown',
     '.mdown',
     '.mkdn',
@@ -16,7 +16,7 @@ mkdocs.utils.markdown_extensions = [
     '.md',
     '.yml',
     '.yaml'
-]
+)
 
 class MkDocsSwaggerUIPlugin(BasePlugin):
     TEMPLATE = Environment(loader=PackageLoader('mkdocs_swagger_ui_plugin', 'templates')).get_template('swagger_ui_template.j2')
