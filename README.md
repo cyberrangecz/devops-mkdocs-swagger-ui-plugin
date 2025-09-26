@@ -1,3 +1,5 @@
+# This repository is no longer active. The official Swagger plugin is now used.
+
 ## About
 Plugin allows you to render `Swagger UI console` based on the swagger specification in YAML format. 
 
